@@ -9,6 +9,11 @@ param (
 
 $ErrorActionPreference = "Stop"
 
+[Net.ServicePointManager]::SecurityProtocol =
+    [Net.SecurityProtocolType]::Tls12 +
+    [Net.SecurityProtocolType]::Tls11 +
+    [Net.SecurityProtocolType]::Tls
+
 $versions = @{
     "7.0" = "vc14"
     "7.1" = "vc14"
